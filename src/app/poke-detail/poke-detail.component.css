@@ -1,5 +1,5 @@
 .detail {
-    display:inline-block;
+    display:flex;
     position:absolute;
     left: 40%;
     top: 300px;
@@ -9,10 +9,11 @@
 }
 
 .example-card {
-    width: 250px;
-    background-color: rgb(2, 2, 2);
+    width: 300px;
+    background-color:rgba(0,0,0, 0.4);
     border:solid;
-    border-color:red ;
+    border-color:#f70532 ;
+    color: white;
   }
   
   .example-header-image {
