@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PokeShareInfoService } from '../poke-share-info.service';
 import { PokemonDetail } from '../pokemon';
 
 @Component({
@@ -11,7 +12,9 @@ export class PokeDetailComponent implements OnInit {
   @Input('detail')
   detail!: PokemonDetail;
 
-  constructor() { }
+  constructor(private pokeShareInfoService : PokeShareInfoService) { 
+    this.pokeShareInfoService.getObservable().subscribe (e => console.log('e' + e))
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PokeShareInfoService } from '../poke-share-info.service';
 import { Pokemon, PokemonDetail } from '../pokemon';
 import { PokemonApiServiceService } from '../pokemon-api-service.service';
 
@@ -18,7 +19,7 @@ export class MyComponentComponent implements OnInit {
 
   pokemons : Pokemon[] = [];
   pokemonDetail!: PokemonDetail ;
-  constructor(private pokemonService : PokemonApiServiceService) {
+  constructor(private pokemonService : PokemonApiServiceService, private pokemonShareInfoService : PokeShareInfoService) {
   }
 
   ngOnInit(): void {
@@ -33,7 +34,10 @@ export class MyComponentComponent implements OnInit {
   go(): void{
     if (this.pokemonID != ''){
       this.pokemonService.getPokemonInfo(this.pokemonID).
-        subscribe(info => this.pokemonDetail = info);
+        subscribe(info => {
+          this.pokemonDetail = info;
+          this.pokemonShareInfoService.setValue(this.pokemonID);
+         });
     };
   }
 

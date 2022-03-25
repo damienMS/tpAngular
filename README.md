@@ -1,4 +1,7 @@
 # Pokdemo
+*By Meranthe Damien & Ramoné Benjamin*
+
+This project was carried out as a part of the Web Engineering course. It aims to introduce us to the Angular framework and its concepts.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
 
