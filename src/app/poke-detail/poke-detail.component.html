@@ -1,0 +1,30 @@
+<div class="detail">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{detail.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="detail.sprites.other?.dream_world?.front_default" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <div class="ability">Ability</div>
+            <ul>
+                <li *ngFor="let ability of detail.abilities" >
+                    {{ability.ability.name}}
+        
+                </li>
+            </ul>
+
+            <div class="stats">Stats</div>
+            <ul>
+                <li *ngFor="let stat of detail.stats" >
+                    <div> {{stat.stat.name}} : {{stat.base_stat}}</div>
+                    
+        
+                </li>
+            </ul>
+        
+        </mat-card-content>
+      </mat-card>
+      
+
+    
+</div> 

@@ -1,0 +1,27 @@
+<div class="container">
+    <form class="formPok">
+        <mat-form-field class="pokInput" appearance="fill">
+            <input matInput placeholder="exp :  pikachu" [(ngModel)]="searchPokemonName " [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-select [(ngModel)]="pokemonID" [ngModelOptions]="{standalone: true}">
+                <mat-option *ngFor="let poke of pokemons | filterPokemonPipe: 'name':searchPokemonName " [value]="poke.id">
+                    {{poke.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    
+    <div class="go">
+        <button (click)="go()" mat-raised-button  color="primary">GO</button>
+    </div>
+    
+    <div *ngIf="pokemonDetail" class="det">
+        <app-poke-detail [detail]="pokemonDetail"></app-poke-detail>
+        
+    </div>
+</div>
+
+
+

@@ -1,0 +1,22 @@
+.detail {
+    display:inline-block;
+    position:absolute;
+    left: 40%;
+    top: 300px;
+    box-sizing:inherit;
+    
+
+}
+
+.example-card {
+    width: 250px;
+    background-color: rgb(2, 2, 2);
+    border:solid;
+    border-color:red ;
+  }
+  
+  .example-header-image {
+
+    background-size: cover;
+  }
+
